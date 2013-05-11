@@ -65,6 +65,7 @@ make %{?_smp_mflags}
 
 
 %files
+%license COPYING
 %defattr(-,root,root,-)
 %{_libdir}/libXxf86misc.so.1
 %{_libdir}/libXxf86misc.so.1.1.0
