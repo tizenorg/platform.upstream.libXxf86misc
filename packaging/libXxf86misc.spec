@@ -6,6 +6,7 @@ Summary:        X11 XFree86 miscellaneous extension library
 Url:            http://www.x.org/
 Group:          System/Libraries
 Source0:        http://xorg.freedesktop.org/releases/individual/lib/%{name}-%{version}.tar.bz2
+Source1001: 	libXxf86misc.manifest
 BuildRequires:  pkgconfig(x11)
 BuildRequires:  pkgconfig(xext)
 BuildRequires:  pkgconfig(xextproto)
@@ -46,6 +47,7 @@ git://anongit.freedesktop.org/git/xorg/lib/libXxf86misc
 
 %prep
 %setup -q
+cp %{SOURCE1001} .
 
 
 %build
@@ -65,6 +67,7 @@ make %{?_smp_mflags}
 
 
 %files
+%manifest %{name}.manifest
 %license COPYING
 %defattr(-,root,root,-)
 %{_libdir}/libXxf86misc.so.1
@@ -72,6 +75,7 @@ make %{?_smp_mflags}
 
 
 %files devel
+%manifest %{name}.manifest
 %defattr(-,root,root,-)
 %{_libdir}/libXxf86misc.so
 %{_libdir}/pkgconfig/xxf86misc.pc
