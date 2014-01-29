@@ -1,3 +1,5 @@
+%bcond_with x
+
 Name:           libXxf86misc
 Version:        1.0.3
 Release:        6.5
@@ -13,6 +15,10 @@ BuildRequires:  pkgconfig(xextproto)
 BuildRequires:  pkgconfig(xf86miscproto)
 BuildRequires:  pkgconfig(xorg-macros)
 BuildRequires:  pkgconfig(xproto)
+
+%if !%{with x}
+ExclusiveArch:
+%endif
 
 %description
 X11 XFree86 miscellaneous extension library
